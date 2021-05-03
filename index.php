@@ -1,5 +1,11 @@
 <?php
-    
+    // aquisisco la badword
+    $badword = $_GET['badword'];
+    // echo $badword;
+
+    // scrivo una frase con una badword e la sostituisco con ***
+    $frase = "Io sono io e voi non siete un $badword!";
+    $frase_censurata = str_replace($badword, '***', $frase);
 
 ?>
 
@@ -12,6 +18,11 @@
         <title>php badwords</title>
     </head>
     <body>
-        <h2></h2>
+    
+        <h2><?php echo $frase ?></h2>
+        <h2><?php echo $frase_censurata ?></h2>
+
+        <!-- calcolo la lunghezza della frase -->
+        <h2>La lunghezza della frase è di <?php echo strlen($frase_censurata)?> caratteri.</h2>
     </body>
 </html>
